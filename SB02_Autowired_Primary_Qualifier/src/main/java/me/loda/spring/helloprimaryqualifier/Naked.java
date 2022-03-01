@@ -1,10 +1,8 @@
 package me.loda.spring.helloprimaryqualifier;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
-@Primary
+@Component("naked")
 public class Naked implements Outfit {
     @Override
     public void wear() {
