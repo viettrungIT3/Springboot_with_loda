@@ -4,7 +4,9 @@ import me.loda.spring.component_scan.others.OtherGirl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan("me.loda.spring.component_scan.others")
 @SpringBootApplication
 public class App {
 
