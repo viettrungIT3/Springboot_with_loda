@@ -22,7 +22,7 @@ public class App {
         System.out.println("User vừa lưu có ID: " + user.getId());
         Long UserID = user.getId();
         // Cập nhật user
-        user.setHp(100);
+        user.setAgi(100);
         // Update user
         userRepository.save(user);
 
@@ -30,5 +30,11 @@ public class App {
         User user2 = userRepository.findById(UserID).get();
         System.out.println("User: " + user);
         System.out.println("User2: " + user2);
+
+        // Xóa User khỏi DB
+        userRepository.delete(user);
+
+        User user3 = userRepository.findById(UserID).orElse(null);
+        System.out.println("User3: " + user3);
     }
 }
