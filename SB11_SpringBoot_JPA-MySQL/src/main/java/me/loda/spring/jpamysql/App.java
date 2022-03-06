@@ -20,13 +20,15 @@ public class App {
         User user = userRepository.save(new User());
         // Khi lưu xong, nó trả về User đã lưu kèm theo Id.
         System.out.println("User vừa lưu có ID: " + user.getId());
-
         Long UserID = user.getId();
         // Cập nhật user
-        user.setAgi(100);
+        user.setHp(100);
         // Update user
         userRepository.save(user);
 
-        userRepository.findAll().forEach(System.out::println);
+        // Query lấy ra user vừa xong để kiểm tra xem.
+        User user2 = userRepository.findById(UserID).get();
+        System.out.println("User: " + user);
+        System.out.println("User2: " + user2);
     }
 }
