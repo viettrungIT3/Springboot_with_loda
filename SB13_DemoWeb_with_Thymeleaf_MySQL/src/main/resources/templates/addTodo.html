@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>To-do</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--css-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <!--js-->
+    <script th:src="@{../static/js/bootstrap.js}"></script>
+
+</head>
+<body>
+    <h1 th:text="#{loda.value.addTodo}"></h1>
+
+    <form th:action="@{/addTodo}" th:object="${todo}" method="post">
+        <label>Title: </label> <input type="text" th:field="*{title}" /> <br>
+        <label>Detail: </label> <input type="text" th:field="*{detail}"> <br>
+        <p><button type="submit" class="btn btn-success">Add</button></p>
+    </form>
+</body>
+
+</html>
